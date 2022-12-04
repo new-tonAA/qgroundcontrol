@@ -29,6 +29,10 @@ APMRoverMode::APMRoverMode(uint32_t mode, bool settable)
         {SMART_RTL,      "Smart RTL"},
         {GUIDED,         "Guided"},
         {INITIALIZING,   "Initializing"},
+        {PROPELLER,      "Propeller"},
+        {OMNI_MANUAL,    "O-Manual"},
+        {OMNI_HEADING,   "O-Heading"},
+        {OMNI_POSITION,  "O-Position"},
     });
 }
 
@@ -46,6 +50,10 @@ ArduRoverFirmwarePlugin::ArduRoverFirmwarePlugin(void)
         APMRoverMode(APMRoverMode::RTL          ,true),
         APMRoverMode(APMRoverMode::SMART_RTL    ,true),
         APMRoverMode(APMRoverMode::GUIDED       ,true),
+        APMRoverMode(APMRoverMode::PROPELLER    ,true),
+        APMRoverMode(APMRoverMode::OMNI_MANUAL  ,true),
+        APMRoverMode(APMRoverMode::OMNI_HEADING ,true),
+        APMRoverMode(APMRoverMode::OMNI_POSITION,true),
         APMRoverMode(APMRoverMode::INITIALIZING ,false),
     });
 

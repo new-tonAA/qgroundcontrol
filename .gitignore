@@ -89,3 +89,5 @@ Qt*-linux*.tar.*
 .vs/
 
 libs/airmapd/include/boost
+
+.qtc_clangd/
