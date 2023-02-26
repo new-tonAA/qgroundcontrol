@@ -17078,6 +17078,20 @@
         <field name="Range">2 50</field>
       </param>
     </parameters>
+    <parameters name="SERVO_FT_">
+      <param humanName="Feetech Servo update rate" name="SERVO_FT_RATE" documentation="Feetech Servo update rate" user="Standard">
+        <field name="Range">1 1000</field>
+      </param>
+      <param humanName="Feetech Servo 11 origin point" name="SERVO_FT_ORG11" documentation="Feetech Servo 11 origin point" user="Standard">
+        <field name="Range">0 4095</field>
+      </param>
+      <param humanName="Feetech Servo 12 origin point" name="SERVO_FT_ORG12" documentation="Feetech Servo 12 origin point" user="Standard">
+        <field name="Range">0 4095</field>
+      </param>
+      <param humanName="Feetech Servo 13 origin point" name="SERVO_FT_ORG13" documentation="Feetech Servo 13 origin point" user="Standard">
+        <field name="Range">0 4095</field>
+      </param>
+    </parameters>
     <parameters name="SERVO_ROB_">
       <param humanName="Robotis servo position min" name="SERVO_ROB_POSMIN" documentation="Position minimum at servo min value. This should be within the position control range of the servos, normally 0 to 4095" user="Standard">
         <field name="Range">0 4095</field>
