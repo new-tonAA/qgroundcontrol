@@ -96,6 +96,8 @@ add_library(Vehicle
 	VehicleWindFactGroup.h
         VehicleHygrometerFactGroup.cc
         VehicleHygrometerFactGroup.h
+        VehicleYachtHudFactGroup.cc
+        VehicleYachtHudFactGroup.h
 
 	${EXTRA_SRC}
 )
