@@ -701,6 +701,9 @@ QString APMFirmwarePlugin::_internalParameterMetaDataFile(Vehicle* vehicle)
 
     case MAV_TYPE_GROUND_ROVER:
     case MAV_TYPE_SURFACE_BOAT:
+        if (vehicle->versionCompare(4, 4, 0) >= 0) {
+            return QStringLiteral(":/FirmwarePlugin/APM/APMParameterFactMetaData.Rover.4.4.xml");
+        }
         if (vehicle->versionCompare(4, 2, 0) >= 0) {
             return QStringLiteral(":/FirmwarePlugin/APM/APMParameterFactMetaData.Rover.4.2.xml");
         }
