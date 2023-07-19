@@ -8222,6 +8222,14 @@
         <field name="Range">0.1 1</field>
         <field name="Increment">0.01</field>
       </param>
+      <param humanName="ratio of steering mixed to lateral in regular mode" name="MOT_STR2LAT_REGU" documentation="ratio of steering mixed to lateral in regular mode. The mix generates more moment of steering force." user="Standard">
+        <field name="Range">0 1</field>
+        <field name="Increment">0.01</field>
+      </param>
+      <param humanName="ratio of steering mixed to lateral in omnidirectional mode" name="MOT_STR2LAT_OMNI" documentation="ratio of steering mixed to lateral in omnidirectional mode. The mix generates more moment of steering force." user="Standard">
+        <field name="Range">0 1</field>
+        <field name="Increment">0.01</field>
+      </param>
     </parameters>
     <parameters name="MSP">
       <param humanName="Cell count override" name="MSP_OSD_NCELLS" documentation="Used for average cell voltage calculation" user="Standard">
