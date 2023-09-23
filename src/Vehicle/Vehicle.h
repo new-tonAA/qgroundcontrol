@@ -42,6 +42,7 @@
 #include "VehicleHygrometerFactGroup.h"
 #include "VehicleLinkManager.h"
 #include "VehicleYachtHudFactGroup.h"
+#include "VehicleVisionFactGroup.h"
 #include "MissionManager.h"
 #include "GeoFenceManager.h"
 #include "RallyPointManager.h"
@@ -322,6 +323,7 @@ public:
     Q_PROPERTY(FactGroup*           localPositionSetpoint READ localPositionSetpointFactGroup CONSTANT)
     Q_PROPERTY(FactGroup*           hygrometer      READ hygrometerFactGroup        CONSTANT)
     Q_PROPERTY(FactGroup*           yachtHud        READ yachtHudFactGroup          CONSTANT)
+    Q_PROPERTY(FactGroup*           vision          READ visionFactGroup            CONSTANT)
     Q_PROPERTY(QmlObjectListModel*  batteries       READ batteries                  CONSTANT)
     Q_PROPERTY(Actuators*           actuators       READ actuators                  CONSTANT)
     Q_PROPERTY(HealthAndArmingCheckReport* healthAndArmingCheckReport READ healthAndArmingCheckReport CONSTANT)
@@ -696,6 +698,7 @@ public:
     FactGroup* terrainFactGroup             () { return &_terrainFactGroup; }
     FactGroup* hygrometerFactGroup          () { return &_hygrometerFactGroup; }
     FactGroup* yachtHudFactGroup            () { return &_yachtHudFactGroup; }
+    FactGroup* visionFactGroup              () { return &_visionFactGroup; }
     QmlObjectListModel* batteries           () { return &_batteryFactGroupListModel; }
 
     MissionManager*                 missionManager      () { return _missionManager; }
@@ -1363,6 +1366,7 @@ private:
     VehicleEstimatorStatusFactGroup _estimatorStatusFactGroup;
     VehicleHygrometerFactGroup      _hygrometerFactGroup;
     VehicleYachtHudFactGroup        _yachtHudFactGroup;
+    VehicleVisionFactGroup          _visionFactGroup;
     TerrainFactGroup                _terrainFactGroup;
     QmlObjectListModel              _batteryFactGroupListModel;
 
@@ -1416,6 +1420,7 @@ private:
     static const char* _estimatorStatusFactGroupName;
     static const char* _hygrometerFactGroupName;
     static const char* _yachtHudFactGroupName;
+    static const char* _visionFactGroupName;
     static const char* _terrainFactGroupName;
 
     static const int _vehicleUIUpdateRateMSecs      = 100;

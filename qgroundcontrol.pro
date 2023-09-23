@@ -737,6 +737,7 @@ HEADERS += \
     src/Vehicle/VehicleWindFactGroup.h \
     src/Vehicle/VehicleHygrometerFactGroup.h \
     src/Vehicle/VehicleYachtHudFactGroup.h \
+    src/Vehicle/VehicleVisionFactGroup.h \
     src/VehicleSetup/JoystickConfigController.h \
     src/comm/LinkConfiguration.h \
     src/comm/LinkInterface.h \
@@ -992,6 +993,7 @@ SOURCES += \
     src/Vehicle/VehicleVibrationFactGroup.cc \
     src/Vehicle/VehicleHygrometerFactGroup.cc \
     src/Vehicle/VehicleYachtHudFactGroup.cc \
+    src/Vehicle/VehicleVisionFactGroup.cc \
     src/Vehicle/VehicleWindFactGroup.cc \
     src/VehicleSetup/JoystickConfigController.cc \
     src/comm/LinkConfiguration.cc \

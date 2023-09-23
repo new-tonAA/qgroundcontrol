@@ -111,6 +111,7 @@ const char* Vehicle::_estimatorStatusFactGroupName =    "estimatorStatus";
 const char* Vehicle::_terrainFactGroupName =            "terrain";
 const char* Vehicle::_hygrometerFactGroupName =         "hygrometer";
 const char* Vehicle::_yachtHudFactGroupName =           "yachtHud";
+const char* Vehicle::_visionFactGroupName =             "vision";
 
 // Standard connected vehicle
 Vehicle::Vehicle(LinkInterface*             link,
@@ -171,6 +172,7 @@ Vehicle::Vehicle(LinkInterface*             link,
     , _estimatorStatusFactGroup     (this)
     , _hygrometerFactGroup          (this)
     , _yachtHudFactGroup            (this)
+    , _visionFactGroup              (this)
     , _terrainFactGroup             (this)
     , _terrainProtocolHandler       (new TerrainProtocolHandler(this, &_terrainFactGroup, this))
 {
@@ -452,6 +454,7 @@ void Vehicle::_commonInit()
     _addFactGroup(&_estimatorStatusFactGroup,   _estimatorStatusFactGroupName);
     _addFactGroup(&_hygrometerFactGroup,        _hygrometerFactGroupName);
     _addFactGroup(&_yachtHudFactGroup,          _yachtHudFactGroupName);
+    _addFactGroup(&_visionFactGroup,            _visionFactGroupName);
     _addFactGroup(&_terrainFactGroup,           _terrainFactGroupName);
 
     // Add firmware-specific fact groups, if provided
