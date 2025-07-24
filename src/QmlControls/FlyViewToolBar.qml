@@ -14,10 +14,7 @@ import QtQuick.Dialogs
 
 import QGroundControl
 import QGroundControl.Controls
-import QGroundControl.Palette
-import QGroundControl.MultiVehicleManager
 import QGroundControl.ScreenTools
-import QGroundControl.Controllers
 
 Rectangle {
     id:     _root
@@ -26,15 +23,6 @@ Rectangle {
     height: toolbarHeight//my change, original: ScreenTools.toolbarHeight
     color:  qgcPal.toolbarBackground
     //scale: 0.7
-/*
-    transform: Scale {
-        origin.x: 0
-        origin.y: 0
-        xScale: 1.0
-        yScale: 0.9
-    }
-    */
-
 
     property var    _activeVehicle:     QGroundControl.multiVehicleManager.activeVehicle
     property bool   _communicationLost: _activeVehicle ? _activeVehicle.vehicleLinkManager.communicationLost : false
@@ -228,4 +216,3 @@ Rectangle {
         }
     }
 }
-
