@@ -350,7 +350,7 @@ void PX4ParameterMetaData::loadParameterFactMetaDataFile(const QString& metaData
                                 qCDebug(PX4ParameterMetaDataLog) << "parameter value:"
                                                                  << "index:" << bit << "description:" << bitDescription;
 
-                                if (bit < 31) {
+                                if (bit <= 31) {
                                     QVariant bitmaskRawValue = 1 << bit;
                                     QVariant bitmaskValue;
                                     QString errorString;
