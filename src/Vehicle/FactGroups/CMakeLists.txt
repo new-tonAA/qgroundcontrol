@@ -40,6 +40,8 @@ target_sources(${CMAKE_PROJECT_NAME}
         VehicleHygrometerFactGroup.h
         VehicleYachtHudFactGroup.cpp
         VehicleYachtHudFactGroup.h
+        VehicleVisionFactGroup.cpp
+        VehicleVisionFactGroup.h
 )
 
 target_include_directories(${CMAKE_PROJECT_NAME}
