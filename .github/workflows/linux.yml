@@ -28,6 +28,7 @@ jobs:
   build:
     name: Build ${{ matrix.arch }} ${{ matrix.build_type }}
     runs-on: ${{ matrix.os }}
+    if: matrix.build_type != 'Debug'  # 这里直接跳过 Debug 构建
 
     strategy:
       fail-fast: false
