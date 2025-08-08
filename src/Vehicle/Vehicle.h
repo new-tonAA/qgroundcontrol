@@ -47,6 +47,7 @@
 #include "VehicleWindFactGroup.h"
 #include "GimbalController.h"
 #include "VehicleYachtHudFactGroup.h"
+#include "VehicleVisionFactGroup.h"
 
 class Actuators;
 class AutoPilotPlugin;
@@ -273,6 +274,7 @@ public:
     Q_PROPERTY(FactGroup*           localPositionSetpoint READ localPositionSetpointFactGroup CONSTANT)
     Q_PROPERTY(FactGroup*           hygrometer      READ hygrometerFactGroup        CONSTANT)
     Q_PROPERTY(FactGroup*           yachtHud        READ yachtHudFactGroup          CONSTANT)
+    Q_PROPERTY(FactGroup*           vision          READ visionFactGroup            CONSTANT)
     Q_PROPERTY(FactGroup*           generator       READ generatorFactGroup         CONSTANT)
     Q_PROPERTY(FactGroup*           efi             READ efiFactGroup               CONSTANT)
     Q_PROPERTY(QmlObjectListModel*  batteries       READ batteries                  CONSTANT)
@@ -614,6 +616,7 @@ public:
     FactGroup* terrainFactGroup             () { return &_terrainFactGroup; }
     FactGroup* hygrometerFactGroup          () { return &_hygrometerFactGroup; }
     FactGroup* yachtHudFactGroup            () { return &_yachtHudFactGroup; }
+    FactGroup* visionFactGroup              () { return &_visionFactGroup; }
     FactGroup* generatorFactGroup           () { return &_generatorFactGroup; }
     FactGroup* efiFactGroup                 () { return &_efiFactGroup; }
     FactGroup* rpmFactGroup                 () { return &_rpmFactGroup; }
@@ -1163,6 +1166,7 @@ private:
 
     //YACHT_HUD
     static const char* _yachtHudFactGroupName;
+    static const char* _visionFactGroupName;
 
     /// Callback for waitForMavlinkMessage
     ///     @param resultHandleData     Opaque data passed in to waitForMavlinkMessage call
@@ -1277,6 +1281,7 @@ private:
     VehicleEstimatorStatusFactGroup _estimatorStatusFactGroup;
     VehicleHygrometerFactGroup      _hygrometerFactGroup;
     VehicleYachtHudFactGroup        _yachtHudFactGroup;
+    VehicleVisionFactGroup          _visionFactGroup;
     VehicleGeneratorFactGroup       _generatorFactGroup;
     VehicleEFIFactGroup             _efiFactGroup;
     VehicleRPMFactGroup             _rpmFactGroup;

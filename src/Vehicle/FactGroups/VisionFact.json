@@ -1,0 +1,59 @@
+{
+    "version": 1,
+    "fileType": "FactMetaData",
+    "QGC.MetaData.Facts": [
+        {
+            "name": "PosX",
+            "shortDesc": "PX",
+            "type": "float",
+            "units": "m",
+            "decimalPlaces": 1
+        },
+        {
+            "name": "PosY",
+            "shortDesc": "PY",
+            "type": "float",
+            "units": "m",
+            "decimalPlaces": 1
+        },
+        {
+            "name": "PosZ",
+            "shortDesc": "PZ",
+            "type": "float",
+            "units": "m",
+            "decimalPlaces": 1
+        },
+        {
+            "name": "VelX",
+            "shortDesc": "VX",
+            "type": "float",
+            "units": "m/s",
+            "decimalPlaces": 2
+        },
+        {
+            "name": "VelY",
+            "shortDesc": "VY",
+            "type": "float",
+            "units": "m/s",
+            "decimalPlaces": 2
+        },
+        {
+            "name": "VelZ",
+            "shortDesc": "VZ",
+            "type": "float",
+            "units": "m/s",
+            "decimalPlaces": 2
+        },
+        {
+            "name": "status",
+            "shortDesc": "status",
+            "type": "uint32"
+        },
+        {
+            "name": "health",
+            "shortDesc": "health",
+            "type": "uint32"
+        }
+    ]
+}
+

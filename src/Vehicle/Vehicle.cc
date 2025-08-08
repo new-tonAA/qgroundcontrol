@@ -83,6 +83,7 @@ QGC_LOGGING_CATEGORY(VehicleLog, "VehicleLog")
 
 const QString guided_mode_not_supported_by_vehicle = QObject::tr("Guided mode not supported by Vehicle.");
 const char* Vehicle::_yachtHudFactGroupName =           "yachtHud";
+const char* Vehicle::_visionFactGroupName =             "vision";
 
 // Standard connected vehicle
 Vehicle::Vehicle(LinkInterface*             link,
@@ -115,6 +116,7 @@ Vehicle::Vehicle(LinkInterface*             link,
     , _estimatorStatusFactGroup     (this)
     , _hygrometerFactGroup          (this)
     , _yachtHudFactGroup            (this)
+    , _visionFactGroup              (this)
     , _generatorFactGroup           (this)
     , _efiFactGroup                 (this)
     , _rpmFactGroup                 (this)
@@ -340,6 +342,7 @@ void Vehicle::_commonInit()
     _addFactGroup(&_efiFactGroup,               _efiFactGroupName);
     _addFactGroup(&_rpmFactGroup,               _rpmFactGroupName);
     _addFactGroup(&_yachtHudFactGroup,          _yachtHudFactGroupName);
+    _addFactGroup(&_visionFactGroup,            _visionFactGroupName);
     _addFactGroup(&_terrainFactGroup,           _terrainFactGroupName);
 
     // Add firmware-specific fact groups, if provided
