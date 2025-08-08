@@ -8,14 +8,6 @@ on:
       - 'src/**'
       - 'CMakeLists.txt'
       - 'cmake/**'
-  push:
-    branches-ignore:
-      - master
-      - 'Stable*'
-    tags:
-      - 'v*'
-    paths-ignore:
-      - 'docs/**'
 
 
 # concurrency:
