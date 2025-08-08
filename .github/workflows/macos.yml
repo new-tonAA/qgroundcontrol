@@ -1,14 +1,6 @@
 name: MacOS
 
 on:
-  push:
-    branches:
-      - master
-      - 'Stable*'
-    tags:
-      - 'v*'
-    paths-ignore:
-      - 'docs/**' # Do not trigger for any changes under docs
   pull_request:
     paths:
       - '.github/workflows/macos.yml'
@@ -16,6 +8,7 @@ on:
       - 'src/**'
       - 'CMakeLists.txt'
       - 'cmake/**'
+
 
 # concurrency:
 #   group: ${{ github.workflow }}-${{ github.ref }}
