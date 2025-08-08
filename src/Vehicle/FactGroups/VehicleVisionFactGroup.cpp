@@ -12,7 +12,7 @@ const char* VehicleVisionFactGroup::_healthFactName = "health";
 
 
 VehicleVisionFactGroup::VehicleVisionFactGroup(QObject *parent)
-    : FactGroup{100, ":/json/Vehicle/VisionFact.json", parent}
+    : FactGroup{100, ":/json/VisionFact.json", parent}
       , _posXFact(0,  _posXFactName, FactMetaData::valueTypeFloat)
       , _posYFact(0,  _posYFactName, FactMetaData::valueTypeFloat)
       , _posZFact(0,  _posZFactName, FactMetaData::valueTypeFloat)
