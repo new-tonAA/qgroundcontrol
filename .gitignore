@@ -31,6 +31,7 @@ qgroundcontrol.xcodeproj/**
 doc/html
 doc/doxy.log
 controller_log*
+build-desktop/
 user_config.pri
 *.app
 *.ncb
@@ -94,3 +95,6 @@ docs/.vitepress/dist/
 
 CMakeUserPresets.json
 cpm_modules
+
+#ardupilot parameter
+src/FirmwarePlugin/APM/Ardupilot-Parameter-Repository
