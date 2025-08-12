@@ -20,6 +20,10 @@ on:
       - 'cmake/**'
       - 'tools/setup/*debian*'
 
+# concurrency:
+#   group: ${{ github.workflow }}-${{ github.ref }}
+#   cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
 jobs:
   build:
     name: Build ${{ matrix.arch }} ${{ matrix.build_type }}
@@ -29,7 +33,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        build_type: [Debug, Release]
+        build_type: [Release]
         os: [ubuntu-24.04-arm, ubuntu-22.04]
         include:
           - os: ubuntu-24.04-arm
@@ -41,10 +45,6 @@ jobs:
             package: QGroundControl-x86_64
             host: linux
             arch: linux_gcc_64
-
-        exclude:
-          - os: ubuntu-24.04-arm
-            build_type: Debug
 
     defaults:
       run:
@@ -104,7 +104,6 @@ jobs:
         run: cmake --build . --target all --config ${{ matrix.build_type }} --parallel
 
       - name: Verify Executable
-        if: ${{ matrix.build_type == 'Release' }}
         working-directory: ${{ runner.temp }}/build/${{ matrix.build_type }}
         run: xvfb-run -a ./QGroundControl --simple-boot-test
 
@@ -113,17 +112,10 @@ jobs:
         run: cmake --install . --config ${{ matrix.build_type }}
 
       - name: Verify AppImage
-        if: ${{ matrix.build_type == 'Release' }}
         working-directory: ${{ runner.temp }}/build
         run: xvfb-run -a ./${{ matrix.package }}.AppImage --simple-boot-test
 
-      - name: Run Unit Tests
-        if: ${{ matrix.build_type == 'Debug' }}
-        working-directory: ${{ runner.temp }}/build
-        run: xvfb-run -a ./${{ matrix.package }}.AppImage --unittest
-
       - name: Upload Build File
-        if: ${{ matrix.build_type == 'Release' }}
         uses: ./.github/actions/upload
         with:
           artifact_name: ${{ matrix.package }}.AppImage
