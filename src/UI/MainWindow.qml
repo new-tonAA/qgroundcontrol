@@ -17,7 +17,7 @@ import QGroundControl
 
 import QGroundControl.Controls
 import QGroundControl.FactControls
-import QGroundControl.ScreenTools
+
 import QGroundControl.FlightDisplay
 import QGroundControl.FlightMap
 
@@ -473,6 +473,11 @@ ApplicationWindow {
             if (!toolDrawer.visible) {
                 toolDrawerLoader.source = ""
             }
+        }
+
+        // This need to block click event leakage to underlying map.
+        DeadMouseArea {
+            anchors.fill: parent
         }
 
         Rectangle {
