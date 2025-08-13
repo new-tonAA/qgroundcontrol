@@ -64,6 +64,8 @@ set(JSON_FILES
     VehicleFact.json
     VibrationFact.json
     WindFact.json
+    VisionFact.json
+    YachtHudFact.json
 )
 qt_add_resources(${CMAKE_PROJECT_NAME} json_vehicle_fact_group
     PREFIX "/json/Vehicle"

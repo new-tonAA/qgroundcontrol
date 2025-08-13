@@ -712,19 +712,6 @@ QString APMFirmwarePlugin::_internalParameterMetaDataFile(const Vehicle *vehicle
         return QString();
     }
 
-    // 特殊处理 Rover 4.4 版本，优先返回自定义的 XML
-    if (vehicle->vehicleType() == MAV_TYPE_GROUND_ROVER || vehicle->vehicleType() == MAV_TYPE_SURFACE_BOAT)
-    {
-        if (vehicle->versionCompare(4, 4, 0) >= 0)
-        {
-            qDebug() << "Firmware version:"
-                     << vehicle->firmwareMajorVersion()
-                     << vehicle->firmwareMinorVersion()
-                     << vehicle->firmwarePatchVersion();
-            return QStringLiteral(":/FirmwarePlugin/APM/APMParameterFactMetaData.Rover.4.4.xml");
-        }
-    }
-
     const QString fileNameFormat = QStringLiteral(":/FirmwarePlugin/APM/APMParameterFactMetaData.%1.%2.%3.xml");
     int currMajor = vehicle->firmwareMajorVersion();
     int currMinor = vehicle->firmwareMinorVersion();
