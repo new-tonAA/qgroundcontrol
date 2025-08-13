@@ -81,6 +81,7 @@ Fact::Fact(const Fact& other, QObject* parent)
 
 void Fact::_init(void)
 {
+    int a = 1;//for testing
     QQmlEngine::setObjectOwnership(this, QQmlEngine::CppOwnership);
     connect(this, &Fact::_containerRawValueChanged, this, &Fact::_checkForRebootMessaging);
 }
