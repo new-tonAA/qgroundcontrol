@@ -98,3 +98,4 @@ cpm_modules
 
 #ardupilot parameter
 src/FirmwarePlugin/APM/Ardupilot-Parameter-Repository
+src/FirmwarePlugin/APM/ArduPilot-Parameter-Repository/
