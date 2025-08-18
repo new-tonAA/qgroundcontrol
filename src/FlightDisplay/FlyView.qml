@@ -429,20 +429,33 @@ Item {
             }
         }
 
-        MouseArea {
-            anchors.fill: parent
-            acceptedButtons: Qt.LeftButton
-            onPressAndHold: {
-                importantMessageBox.showActions = true
+        // 小按钮，初始显示
+        Rectangle {
+            id: smallClearButton
+            width: 50
+            height: 24
+            color: "#FF5555"
+            radius: 4
+            anchors.top: importantMessageBox.bottom
+            anchors.right: importantMessageBox.right
+            z: importantMessageBox.z + 1
+            visible: !importantMessageBox.showActions
+
+            Text { anchors.centerIn: parent; text: "清除"; color: "white"; font.pixelSize: 12 }
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    importantMessageBox.showActions = true
+                }
             }
         }
 
-        // 清除 / 取消 按钮组
         Row {
             id: actionButtons
             spacing: 8
             anchors.centerIn: parent
-            visible: importantMessageBox.showActions   // 根据属性控制显隐
+            visible: importantMessageBox.showActions
 
             Rectangle {
                 width: 80; height: 40; radius: 6
