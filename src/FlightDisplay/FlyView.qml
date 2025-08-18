@@ -390,6 +390,8 @@ Item {
         property real safeScaleFactor_WIDTH: msgScaleFactor_WIDTH < 0.0 ? 0.0 : (msgScaleFactor_WIDTH > 3.0 ? 3.0 : msgScaleFactor_WIDTH)
         property real safeScaleFactor_FONT: msgScaleFactor_FONT < 0.0 ? 0.0 : (msgScaleFactor_FONT > 3.0 ? 3.0 : msgScaleFactor_FONT)
 
+        property bool showActions: false
+
         //property real safeScaleFactor: msgScaleFactor > 0.1 ? msgScaleFactor : 0.1  // 设最小缩放0.1，防止过小
         width: safeScaleFactor_WIDTH * 500//(msgScaleFactor > 0.01 ? msgScaleFactor : 1.0) * 500
         height: safeScaleFactor * 80//(msgScaleFactor > 0.01 ? msgScaleFactor : 1.0) * 80
@@ -424,6 +426,61 @@ Item {
                 //font.pixelSize: ScreenTools.defaultFontPixelHeight * 0.6 * safeScaleFactor
                 font.pixelSize: ScreenTools.defaultFontPixelHeight * 0.6 * safeScaleFactor_FONT
                 anchors.margins: 8
+            }
+        }
+
+        // 小按钮，初始显示
+        Rectangle {
+            id: smallClearButton
+            width: 50
+            height: 24
+            color: "#FF5555"
+            radius: 4
+            anchors.top: importantMessageBox.bottom
+            anchors.right: importantMessageBox.right
+            z: importantMessageBox.z + 1
+            visible: !importantMessageBox.showActions
+
+            Text { anchors.centerIn: parent; text: "清除"; color: "white"; font.pixelSize: 12 }
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    importantMessageBox.showActions = true
+                }
+            }
+        }
+
+        Row {
+            id: actionButtons
+            spacing: 8
+            anchors.centerIn: parent
+            visible: importantMessageBox.showActions
+
+            Rectangle {
+                width: 80; height: 40; radius: 6
+                color: "red"
+                Text { anchors.centerIn: parent; text: "清除"; color: "white" }
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: {
+                        vehicleMessagesBridge.allErrors = ""
+                        messageText.text = ""
+                        importantMessageBox.showActions = false
+                    }
+                }
+            }
+
+            Rectangle {
+                width: 80; height: 40; radius: 6
+                color: "gray"
+                Text { anchors.centerIn: parent; text: "取消"; color: "white" }
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: {
+                        importantMessageBox.showActions = false
+                    }
+                }
             }
         }
 
