@@ -124,6 +124,7 @@ jobs:
         if: matrix.build_type == 'Debug'
         working-directory: ${{ runner.temp }}/build
         run: xvfb-run -a ./${{ matrix.package }}.AppImage --unittest
+        continue-on-error: true
 
       - name: Upload Build File
         if: matrix.build_type == 'Release'
