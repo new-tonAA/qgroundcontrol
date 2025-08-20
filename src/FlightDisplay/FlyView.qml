@@ -361,9 +361,8 @@ Item {
 
                 // 自动滚动到底部，延迟等待 messageText.height 更新完成
                 Qt.callLater(() => {
-                    const nearBottom = flickable.contentY >= flickable.contentHeight - flickable.height - 20;
-                    if (nearBottom || flickable.contentY === 0)
-                        flickable.contentY = flickable.contentHeight - flickable.height;
+                    if (!flickable.moving && !flickable.dragging)
+                        flickable.contentY = flickable.contentHeight - flickable.height
                 });
             }
         }
